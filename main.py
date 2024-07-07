@@ -33,8 +33,7 @@ with st.form (key="Registration Form"):
   submit=st.form_submit_button(label='Submit Query')
 
 if st.button('Get Another Query'):
-    st.rerun()
-
+  st.rerun()
 
 if submit:
   country_code=pycountry.countries.get(name=country).alpha_2.lower()
@@ -104,6 +103,7 @@ if submit:
       params['start']+=10
     else:
       break
+
 
   df=pd.DataFrame(results)
   df=df.dropna()
